@@ -1,0 +1,109 @@
+add screen SO302000 {
+ add container "ShipmentSummary"{
+     
+   add layout "Header"{
+        layout=HeaderSimple
+   
+     add layout "HR1"{
+         layout=inline
+         add field "ShipmentNbr"
+         add field "Status"
+         add field "Type"
+       }
+    }
+   
+   add field "Hold"
+       add field "ShipmentDate"
+       add field "ShippedQuantity"
+      add field "Operation"
+      add field "Customer"
+      add field "Location"
+      add field "ControlQuantity"
+      add field "ShippedWeight"
+      add field "ShippedVolume"    
+   
+   add layout "Document"{
+    layout=Tab    
+      add field "DocumentDetails#OrderType"   
+       add field "DocumentDetails#InventoryID"   
+       add field "DocumentDetails#FreeItem"   
+       add field "DocumentDetails#Warehouse"   
+       add field "DocumentDetails#Location"   
+       add field "DocumentDetails#UOM"   
+       add field "DocumentDetails#ShippedQty"   
+       add field "DocumentDetails#OrderedQty"   
+       add field "DocumentDetails#PackedQty"   
+       add field "DocumentDetails#LotSerialNbr"
+        add field "DocumentDetails#ExpirationDate"   
+       add field "DocumentDetails#ReasonCode"   
+       add field "DocumentDetails#Description"  
+   }
+    add layout "Orders"{
+      layout=Tab  
+       add field "Orders#OrderType"   
+       add field "Orders#OrderNbr"   
+       add field "Orders#FreeItem"   
+       add field "Orders#ShippedQty"   
+       add field "Orders#ShippedWeight"   
+       add field "Orders#ShippedVolume"   
+       add field "Orders#InvoiceType"   
+       add field "Orders#OrderedQty"   
+       add field "Orders#InvoiceNbr"   
+       add field "Orders#InventoryDocType"
+       add field "Orders#InventoryRefNbr"        
+     }  
+    add layout "Shipping Details"{
+      layout=Tab  
+       add group "g1"{
+         displayName="Shipping Contact"
+         collapsable=true
+         collapsed=false
+          add field "ShippingSettingsShipToContact#OverrideContact"   
+           add field "ShippingSettingsShipToContact#CompanyName"   
+           add field "ShippingSettingsShipToContact#Attention"   
+           add field "ShippingSettingsShipToContact#Phone1"   
+           add field "ShippingSettingsShipToContact#Email"          
+       }
+      add group "g2"{
+         displayName="Shipping Address"
+         collapsable=true
+         collapsed=true
+          add field "ShippingSettingsShipToAddress#OverrideAddress"   
+           add field "ShippingSettingsShipToAddress#AddressLine1"   
+           add field "ShippingSettingsShipToAddress#AddressLine2"   
+           add field "ShippingSettingsShipToAddress#City"   
+           add field "ShippingSettingsShipToAddress#Country"          
+           add field "ShippingSettingsShipToAddress#State"   
+           add field "ShippingSettingsShipToAddress#PostalCode"         
+       }
+
+       add group "g3"{
+         displayName="Shipping Information"
+         collapsable=true
+         collapsed=true
+          add field "ShippingSettingsShippingInformation#ShipVia"   
+           add field "ShippingSettingsShippingInformation#WillCall"   
+           add field "ShippingSettingsShippingInformation#FreightClass"   
+           add field "ShippingSettingsShippingInformation#FOBPoint"   
+           add field "ShippingSettingsShippingInformation#ShippingTerms"          
+           add field "ShippingSettingsShippingInformation#ShippingZoneID"   
+           add field "ShippingSettingsShippingInformation#ResidentialDelivery"
+                    add field "ShippingSettingsShippingInformation#SaturdayDelivery"   
+           add field "ShippingSettingsShippingInformation#UseCustomerSAccount"   
+           add field "ShippingSettingsShippingInformation#Insurance"   
+           add field "ShippingSettingsShippingInformation#FreightCurrency"   
+           add field "ShippingSettingsShippingInformation#FreightCost"          
+           add field "ShippingSettingsShippingInformation#OverrideFreightPrice"   
+           add field "ShippingSettingsShippingInformation#InvoiceFreightPriceBasedOn"
+          add field "ShippingSettingsShippingInformation#FreightPrice"   
+       }
+
+      add group "g4"{
+        displayName="Service Management"
+         collapsable=true
+         collapsed=true
+     add field "ShippingSettingsServiceManagement#Installed"
+   }   
+     }  
+ }
+}

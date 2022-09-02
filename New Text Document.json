@@ -1,0 +1,161 @@
+{
+    "id": "33cb44b6-83d5-ea11-8176-d002f6e7f394",
+    "rowNumber": 1,
+    "note": "",
+    "Attributes": [
+        {
+            "id": "cb5f68b5-fd1c-ec11-91c4-e0d55e7b7ed8",
+            "rowNumber": 1,
+            "note": null,
+            "Attribute": {
+                "value": "Product needing support"
+            },
+            "RefNoteID": {
+                "value": "33cb44b6-83d5-ea11-8176-d002f6e7f394"
+            },
+            "Required": {
+                "value": false
+            },
+            "Value": {
+                "value": "poor"
+            },
+            "custom": {},
+            "files": []
+        },
+        {
+            "id": "cc5f68b5-fd1c-ec11-91c4-e0d55e7b7ed8",
+            "rowNumber": 2,
+            "note": null,
+            "Attribute": {
+                "value": "Product Purchase Date"
+            },
+            "RefNoteID": {
+                "value": "33cb44b6-83d5-ea11-8176-d002f6e7f394"
+            },
+            "Required": {
+                "value": false
+            },
+            "Value": {
+                "value": "2021-11-21 00:00:00.000"
+            },
+            "custom": {},
+            "files": []
+        }
+    ],
+    "Billable": {
+        "value": false
+    },
+    "BillableOvertime": {
+        "value": 0
+    },
+    "BillableTime": {
+        "value": 0
+    },
+    "BusinessAccount": {
+        "value": "WRIGHTCORN"
+    },
+    "BusinessAccountName": {
+        "value": "WRIGHTCORN"
+    },
+    "CaseID": {
+        "value": "000159"
+    },
+    "ClassID": {
+        "value": "INTERNAL"
+    },
+    "ClosingDate": {},
+    "ContactDisplayName": {
+        "value": "Dmitry Opaits"
+    },
+    "ContactID": {
+        "value": 10101
+    },
+    "Contract": {},
+    "DateReported": {
+        "value": "2020-08-03T05:24:02.463+05:30"
+    },
+    "Description": {
+        "value": "<HTML><head><style>/* RTE style begin */.rich ol, .rich ul { margin-top: 0px; margin-bottom: 0px;}\n.rich .imgbrdr {\n\tborder: solid 1px;\n}\n.richIcon {\n\tdisplay: inline-block;\n\tbackground-image: url(Images/sprite_main5.png);\n\tbackground-repeat: no-repeat;\n\twidth: 15px;\n}\n.richAttach {\n\tbackground-position: -2px -122px;\n}\n.richImg {\n\tbackground-position: -2px -1120px;\n}\n.richScreen {\n\tbackground-position: -24px -1032px;\n}\n.richArticle {\n\tbackground-position: -24px -1054px;\n}\n\n/* Correct box */\n.rich .GrayBox {\n\tborder: solid 1px #CCCCCC;\n\tbackground-color: #F9F9F9;\n\tpadding: 4px;\n\t/*margin: 4px;*/\n\twidth: 98%;\n}\n.rich .hintcell\n{\n\theight: 36px;\n\twidth: 32px;\n\tvertical-align: middle;\n}\n\n.rich .warncell\n{\n\theight: 36px;\n\twidth: 32px;\n\tvertical-align: middle;\n}\n\n.rich .boxcontent{ width: 100% }\n.rich pre { font-size:1.3em }\n\n.rich iframe{\n\tborder: none;\n}\n.rich iframe.iframeBorder, .rich img.iframeBorder {\n\tborder: solid black 1px;\n}\n\n.rtetable > tbody > tr > td, .rtetable > tr > td { white-space: nowrap }\n.rtetable > tbody > tr:first-child > td, .rtetable > tr:first-child > td { background-color: silver }\n\n\n.rich pre.source-highlighted {background-color: #F0F0FF;}\n.rich pre.source-highlighted .nu, .rich .sourcetable .nu { color: brown; }\n.rich pre.source-highlighted .kw, .rich .sourcetable .kw { color: blue; }\n.rich pre.source-highlighted .cmt, .rich .sourcetable .cmt { color: green; }\n.rich pre.source-highlighted .sl, .rich .sourcetable .sl { color: brown; }\n.rich pre.source-highlighted .br, .rich .sourcetable .br {color: darkgreen; }\n\n.rich pre.source-highlighted .add, .rich .sourcetable .add { background: palegreen; }\n.rich pre.source-highlighted .del, .rich .sourcetable .del { background: pink; }\n\n.rich table, .rich tr, .rich td, .rich img, .rich iframe {\n\tcursor: default;\n}\n.layout .rtecell {\n\tvertical-align: top;\n\tfont-size: small;\n}\n.rtetable > tbody > tr > td, .rtetable > tr > td { vertical-align: top; }\n\n.rich p{\n\tmargin:0px 5px 0px 0px;\n}\n.rich .align-center{\n\ttext-align: center;\n}\n.rich .align-right{\n\ttext-align: right;\n}\n.rich .align-left{\n\ttext-align: left;\n}\n.rich li[style*='text-align: center'], .rich li[style*='text-align: right'] {\nlist-style-position: inside;\n}\n\n.rtetable { empty-cells: show; border: solid 1px black; border-collapse:collapse; }\n.rtetable > tbody > tr > td, .rtetable > tr > td { border: solid 1px black; height: 1.5em; min-width: 20px;  padding: 0px 5px }\n.rich table {font-family: arial; font-size: small}\n.rich blockquote.shift {\n\tmargin-right: 0px;margin-top: 0px; margin-bottom: 0px;\n}\n.rich img[data-expand] {\n\tdisplay: block;\n}\n.rich p, .rich p.richp  {font-family: arial; font-size: small}\n.rich blockquote.shift h1, .rich blockquote.shift h2, .rich blockquote.shift h3, .rich blockquote.shift h4, .rich blockquote.shift h5, .rich blockquote.shift h6 {\n    margin-top: 0px;\n}\n.rich, .rich * {\n    word-wrap: break-word;\n}\n\n\n\n.sourcetable {background-color: #F0F0FF; font-family: monospace; width: 100%}\n.sourcetable tr {\n\tmargin: 0px;\n\tpadding: 0px;\n}\n.sourcetable td {\n\tmargin: 0px;\n\tpadding: 0px;\n\twhite-space: nowrap;\n}\n.sourcetable > tbody > tr > td:first-child, .sourcetable > tr > td:first-child\n{\n\twidth:1px;\n}\n\n.filelist {\n\t/*display:inline-block;*/ padding: 5px;\n}\n\n.rich .toc {\n\t/*display:inline-block;*/ padding: 5px;\n}\n.rich .toc .header,.rich  .wikilist .header,.rich  .filelist .header {\n\tfont-size: 1.7em;\n}\n.rich .toc li,.rich  .filelist li {\n\tmargin: 5px 0px;\n}\n.rich .wikilist div {\n\tmargin: 10px;\n}\n\n.rich .layout {min-height: 2.5em; display:table; width:100%; border-spacing:5px; table-layout:fixed; empty-cells: show;}\n.rich .layout .rtecell {display:table-cell; height: 2.5em}\n.rich .layout .rteside {width: 25%}\n\n/*\n.rtetable {\n\tborder-collapse:collapse;\n}\n.rtetable > tbody > tr > td, .rtetable > tr > td {\n\tborder: 1px solid #ddd;\n\tpadding: 7px 10px;\n\tvertical-align: top;\n\ttext-align: left;\n}*/\n.rich blockquote.realbq {\n\tborder-left-color: lightblue;\n\tborder-left-width: 1px;\n\tborder-left-style: solid;\n\tmargin-top: 0px;\n\tmargin-bottom: 0px;\n\tpadding-left: 5px;\n}\n.rich body {font-family: arial; font-size: small}\n\n.rich .GrayBox {\n\tmargin-left: 8px;\n}\n\n.rich .sourcetable { font-size:1.3em;}\n\n\n/* RTE style end */</style></head><body spellcheck=\"true\"  class=\"rich\" style=\"margin: 0px; padding: 0px; font-family: arial; font-size: small;\"><p class=\"richp\">I purchased your widgets, but need some additional information about whether you are planning to increase the melting point of the polystyrene components so I can use them in some higher heat applications.</p></body></HTML>"
+    },
+    "InitialResponse": {
+        "value": "000"
+    },
+    "LastActivityDate": {},
+    "LastIncomingActivity": {},
+    "LastOutgoingActivity": {},
+    "Location": {
+        "value": "MAIN"
+    },
+    "ManualOverride": {
+        "value": false
+    },
+    "OvertimeSpent": {
+        "value": "000"
+    },
+    "Owner": {},
+    "OwnerEmployeeName": {},
+    "Priority": {
+        "value": "Medium"
+    },
+    "Reason": {
+        "value": "Unassigned"
+    },
+    "ResolutionTime": {
+        "value": "1048218"
+    },
+    "Severity": {
+        "value": "Medium"
+    },
+    "SLA": {
+        "value": "2020-08-03T13:24:02+05:30"
+    },
+    "Status": {
+        "value": "New"
+    },
+    "Subject": {
+        "value": "Roadmap question"
+    },
+    "TimeSpent": {
+        "value": "000"
+    },
+    "Workgroup": {},
+    "WorkgroupDescription": {},
+    "custom": {},
+    "files": [
+        {
+            "id": "74ef47bb-e34d-4044-98d5-029fd4400d04",
+            "filename": "Cases (000159)\\SOOrderTotalFieldsValidation3.zip",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/74ef47bb-e34d-4044-98d5-029fd4400d04"
+        },
+        {
+            "id": "65fc95b8-63c9-488e-82e6-30294e3a6383",
+            "filename": "Cases (000159)\\Screenshot (86).png",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/65fc95b8-63c9-488e-82e6-30294e3a6383"
+        },
+        {
+            "id": "5da83474-e7bd-4d29-a8fa-8bba400739b9",
+            "filename": "Cases (000159)\\AR__CON_Customer_Locations.rtf",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/5da83474-e7bd-4d29-a8fa-8bba400739b9"
+        },
+        {
+            "id": "54ac5abb-bcb7-44d3-b727-a1a1d144a710",
+            "filename": "Cases (000159)\\Screenshot (88).png",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/54ac5abb-bcb7-44d3-b727-a1a1d144a710"
+        },
+        {
+            "id": "8fa367a4-2d44-4ee7-b0fb-c495313d1095",
+            "filename": "Cases (000159)\\Screenshot (94).png",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/8fa367a4-2d44-4ee7-b0fb-c495313d1095"
+        },
+        {
+            "id": "1eecea59-8d3e-4856-a4b8-f4660acec2a2",
+            "filename": "Cases (000159)\\Screenshot (83).png",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/1eecea59-8d3e-4856-a4b8-f4660acec2a2"
+        },
+        {
+            "id": "1ad834b0-b6f0-44d6-a807-fc65f860359d",
+            "filename": "Cases (000159)\\Screenshot (96).png",
+            "href": "/UpgradeCustomizationFailed/entity/Default/18.200.001/files/1ad834b0-b6f0-44d6-a807-fc65f860359d"
+        }
+    ]
+}

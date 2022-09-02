@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+
+}
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container h-100">
+        <div class="row justify-content-center  h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration h-100" style="border-radius: 15px;">
+                    <h3 class="p-5 float-start text-white BG-header">HCI Request</h3>
+                    <div class="card-body p-4 p-md-5">
+                        <div class="row ">
+                            <div class="col-md-12 mt-4 mb-0 mt-0">
+                                <label class="form-label requiredNotation">Required</label>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row ">
+                                <div class="col-md-12 mt-4 ">
+                                    <div class="form-outline">
+                                        <label class="form-label required" for="txtreqnbr">Request Number</label>
+                                        <input type="text" id="txtreqnbr" name="txtreqnbr" value="" required readonly class="form-control form-control-lg w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--This is hidden key to get fetch parameter from querystring-->
+                            <input id="paramKey" name="paramKey" type="hidden" value="@ViewBag.paramKey">
+                            <input id="disableButton" name="disableButton" type="hidden" value="@ViewBag.disableButton">
+                            <input id="NotExists" name="NotExists" type="hidden" value="@ViewBag.NotExists">
+                            <div class="row">
+                                <div class="col-md-12 mt-4 ">
+                                    <div class="form-outline">
+                                        <label for="txtnotes" class="form-label">Notes</label>
+                                        <textarea placeholder="Enter your answer" required class="form-control form-control-lg" id="txtnotes" name="txtnotes"></textarea>
+                                        <label class="noteerror  invisible"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 mt-4 mb-0">
+                                    <div class="form-outline">
+                                        <label class="form-label required" for="recfile">Quote</label>
+                                        <input type="file" id="recfile" accept=".als, .cer, .csv, .dat, .doc, .docx, .epl, .exe, .gif, .ico, .ics, .jpeg, .jpg, .js, .mdb, .msi, .ofx, .pdf, .pfx, .ppt, .pptx, .qbo, .qfx, .rar, .rtf, .sql, .swf, .txt, .xls, .xlsx, .xml, .zip, .zpl, .pbix, .png, .svg, .tif, .tiff" class="form-control form-control-lg" onchange="Filevalidation()" />
+                                        <div class="form-label mt-3 ml-1 ">
+                                            <p class="fileinfo">File size limit: 10MB </p>
+                                            <p class="fileinfo">Allowed file type : Word, Excel, PPT, PDF, Image, Video </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-1 float-end">
+                                <input class="btn bg-btn wd-btn btn-lg h-75" type="button" name="btnSubmit" id="btnSubmit" value="Submit" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+   
+
+    $(document).ready(function () {
+
+        orderNbr = GetURLParameter($("#paramKey").val());
+
+        if (orderNbr != "" && orderNbr != null) {
+            var obj = document.getElementById("txtreqnbr");
+            obj.value = orderNbr;
+            btnStatus(false);
+
+        } else {
+            btnStatus(true);
+        }
+
+        isdisabled = true;
+        isdisabled = ($("#disableButton").val().toLowerCase() === 'false');
+
+        if ($("#NotExists").val().length > 0 && isdisabled==true) {
+            alert($("#NotExists").val());
+        }
+
+        btnStatus(isdisabled);
+
+
+
+
+
+       
+
+        $("#txtnotes").keydown(function () {
+            if ($("#txtnotes").val().length > 0) {
+                $("#txtnotes").removeClass("error");
+            }
+        });
+    
+
+
+
+    });
+</script>

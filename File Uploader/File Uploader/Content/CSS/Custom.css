@@ -1,0 +1,99 @@
+﻿
+.error {
+    border: 1px solid orange !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+textarea {
+    resize: initial;
+}
+
+body {
+background:darkgrey;
+}
+
+.radioEnabled {
+    height: 70px;
+    width: 80%;
+    line-height: 70px;
+    text-align: center;
+    border: 2px solid #dd;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 7px rgba(255,255,255,1);
+    -webkit-box-shadow: 0px 0px 0px 7px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 0px 7px rgba(255,255,255,1);
+    transition: all 200ms ease-out;
+}
+.required:after {
+    content: " *";
+    color: red;
+}
+.radioImage {
+    max-width: 45px;
+    max-height: 45px;
+    margin: 4px;
+}
+
+
+.fileinfo {
+    font-size: 12px;
+    color: dimgray;
+    padding: 0px;
+    margin-bottom: 4px;
+}
+.BG-header {
+    background: #03787C;
+}
+.bg-btn {
+    background: #03787C;
+    color:white;
+}
+
+.bg-btn:hover {
+    color: white;
+}
+
+.wd-btn {
+width:200px;
+}
+
+
+.form-label {
+    color: grey;
+}
+
+.form-control {
+    font-size: 16px;
+    color: gray;
+}
+
+.required:after {
+    padding-left: 6px;
+    content: "*";
+    color: red;
+}
+.requiredNotation:before {
+    padding-right: 8px;
+    content: "*";
+    color: red;
+    font-weight: bold;
+}
+
+.btn {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.noteerror {
+    color: green;
+    background: transparent;
+    border: 0px !important;
+    width: auto;
+    font-size: 12px;
+    top: -3px;
+    position: relative;
+    left: 2px;
+    right: 2px;
+}

@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "CaseFeedback";
+}
+
+<div class="cont">
+    <!--This is hidden key to get fetch parameter from querystring-->
+    <input type="hidden" value="@Url.Content("~/Content/Images/good.png")" id="good" name="good" />
+    <input type="hidden" value="@Url.Content("~/Content/Images/poor.png")" id="poor" name="poor" />
+    <input type="hidden" value="@Url.Content("~/Content/Images/average.png")" id="average" name="average" />
+
+    <input id="hiddenKey" name="hiddenKey" type="hidden" value="@ViewBag.caseID">
+    <input id="hiddenValue" name="hiddenValue" type="hidden" value="">
+    <section class="vh-100 gradient-custom">
+        <div class="container h-100">
+            <div class="row justify-content-center  h-100">
+                <div class="col-12 col-lg-9 col-xl-6">
+                    <div class="card shadow-2-strong card-registration h-100 pt-2" style="border-radius: 15px;">
+                        <h3 class="p-md-5 float-start text-black-50 text-center " style="background-color:rgb(233, 236, 239);">@ViewBag.pageTitle</h3>
+                        <div class="card-body p-4 p-md-5 ">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    //Check for required fields
+    function CheckREquired() {
+
+        $(document).each(function () {
+            var DomControls = $(this).find(':input') //<-- Should return all input elements in that specific form.
+
+            for (var i = 0; i < DomControls.length; i++) {
+                var docReqProp = $(DomControls[i]).prop("required");
+                var contType = $(DomControls[i]).prop("type");
+                var val = "";
+
+                if (contType == "date") {
+                    val = $("#" + $(DomControls[i]).prop("id")).val();
+                    if (docReqProp == true && (val == undefined || val == "")) {
+                        Okay = false;
+                        break;
+                    }
+                } else if (contType == "radio") {
+                    val = $("input[name=" + $(DomControls[i]).prop("name") + "]:checked").val();
+                    if (docReqProp == true && (val == undefined || val == "")) {
+                        Okay = false;
+                        break;
+                    }
+                } else {
+                    Okay = true;
+
+                }
+            }
+
+        });
+
+    }
+</script>

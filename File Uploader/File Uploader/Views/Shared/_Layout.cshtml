@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Custom.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+</head>
+<body onload="">
+    <div class="loadingDiv d-none" id="loading" name="loading">
+        <img class="centeredImage" src="~/Content/Images/ATB3o.gif" />
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <script src="~/Content/JS/custom.js"></script>
+            <script src="~/Scripts/bootstrap.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            @*@Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)*@
+            <style>
+                .p-md-5 {
+                    padding: 1.5rem !important;
+                }
+
+                .loadingDiv {
+                    position: fixed;
+                    background-color: white;
+                    width: 100%;
+                    top: 0px;
+                    bottom: 0px;
+                    z-index: 999
+                }
+
+                .body-content {
+                    font-size: 14px;
+                }
+
+                .centeredImage {
+                    position: absolute;
+                    top: 25%;
+                    transform: translateY(-50%);
+                    left: 50%;
+                    transform: translateX(-50%)
+                }
+            </style>
+
+
+            <script>
+                //submitting form
+$(document).ready(function () {
+
+    let isTrue = document.title.toLocaleLowerCase().toString().includes('casefeedback');
+    if (isTrue) {
+        LoadControls();
+    }
+
+
+    $("#btnSubmit").click(function () {
+
+        var notes = $("#txtnotes").val();
+
+
+        var frmData = new FormData();
+        var filebase = $("#recfile").get(0);
+
+        if (filebase.files.length != 0) {
+
+            var files = filebase.files;
+
+            //Apend file data
+            frmData.append("OrderNbr", orderNbr);
+            frmData.append("Note", notes);
+            frmData.append(files[0].name, files[0]);
+            $.ajax({
+                contentType: "application/json",
+                url: '@Url.Action("IndexAsync")',
+                type: "POST",
+                contentType: false,
+                processData: false,
+                async: true,
+                data: frmData,
+                success: function (data) {
+                    if (data.notemsg != "") {
+
+                        ////note error message filling
+                        //$(".noteerror").removeClass("invisible").text(data.notemsg);
+                        //window.setInterval(function () { $(".noteerror").addClass("invisible"); }, 8000);
+
+                    }
+                    hasUploaded = true;
+                    message = data.message;
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        } else {
+            $("#recfile").focus();
+            alert(selectFile);
+        }
+    });
+
+
+
+    function LoadControls() {
+
+        caseID = GetURLParameter($("#hiddenKey").val());
+
+        cardBody = $(".card-body");
+
+
+        btnColumnDiv = $("<div class='mt-1 float-end'></div>");
+        btnSubmit = $("<button class='btn btn-secondary wd-btn btn-lg h-75' id='btnSubmitCase' name='btnSubmitCase'>Submit</button>");
+        btnColumnDiv.append(btnSubmit);
+
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            url: '@Url.Action("GetControls")',
+            type: "GET",
+            contentType: false,
+            processData: false,
+            success: function (data) {
+
+                if (data != null) {
+                    for (var i = 0; i < data.length; i++) {
+                        //var label = $("<label class='form-label'  ></label>").text(data[i].question);
+
+                        var label = $('<label>').attr({
+                            id: 'lblq' + (i + 1).toString(),
+                            name: 'lblq' + (i + 1).toString()
+                        }).addClass("form-label").text(data[i].question);
+
+                        if (data[i].isRequired.toLocaleLowerCase() == "true") {
+                            $(label).addClass("required");
+                        }
+
+                        cardBody.append(CreateControl(data[i].controlType, i, label, data[i].attributeID, data[i].isRequired));
+                    }
+                }
+
+                cardBody.append(btnColumnDiv);
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    }
+});
+
+
+// Submit feedback details
+$(document).on("click", "#btnSubmitCase", function (e) {
+
+    CheckREquired(); //validatiions verificatin
+
+
+    if (Okay == false) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    var frmData = new FormData();
+
+    var filebase = $("input[type='file']").get(0);
+
+                    if (filebase != undefined) {
+                        if (filebase.files.length != 0) {
+
+                            var files = filebase.files;
+
+                            //Apend file data
+                            frmData.append("CaseID", caseID);
+                            frmData.append("attributes", JSON.stringify(valuesList));
+                            frmData.append(files[0].name, files[0]);
+
+                            $.ajax({
+                                contentType: "application/json",
+                                url: '@Url.Action("CaseFeedback")',
+                                type: "POST",
+                                dataType: 'json',
+                                async: true,
+                                contentType: false,
+                                processData: false,
+                                data: frmData,
+                                success: function (data) {
+                                    if (data.notemsg != "") {
+
+                                        ////note error message filling
+                                        //$(".noteerror").removeClass("invisible").text(data.notemsg);
+                                        //window.setInterval(function () { $(".noteerror").addClass("invisible"); }, 8000);
+
+                                    }
+                                    hasUploaded = true;
+                                    message = data.message;
+                                },
+                                error: function (err) {
+                                    alert(err.statusText);
+                                }
+                            });
+                        } else {
+                            $("input[type='file']").focus();
+                            alert(selectFile);
+                        }
+                    } else {
+
+                         //Apend file data
+        frmData.append("CaseID", caseID);
+        frmData.append("attributes", JSON.stringify(valuesList));
+        //frmData.append(files[0].name, files[0]);
+
+        $.ajax({
+            contentType: "application/json",
+            url: '@Url.Action("CaseFeedback")',
+            type: "POST",
+            dataType: 'json',
+            async: true,
+            contentType: false,
+            processData: false,
+            data: frmData,
+            success: function (data) {
+                if (data.notemsg != "") {
+
+                    ////note error message filling
+                    //$(".noteerror").removeClass("invisible").text(data.notemsg);
+                    //window.setInterval(function () { $(".noteerror").addClass("invisible"); }, 8000);
+
+                }
+                hasUploaded = true;
+                message = data.message;
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+  }
+});
+            </script>
+        </footer>
+    </div>
+</body>
+</html>
